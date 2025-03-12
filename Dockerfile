@@ -14,7 +14,7 @@ RUN apt-get update --yes && \
 WORKDIR /home/${NB_USER}
 
 RUN pip install --upgrade pip
-COPY .env requirements.txt /home/${NB_USER}/
+COPY .env requirements.txt /home/${NB_USER}
 RUN pip install --no-cache-dir --upgrade -r /home/${NB_USER}/requirements.txt && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
